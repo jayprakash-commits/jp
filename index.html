@@ -4,43 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>View Dish in AR</title>
-
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <style>
+    body { font-family: sans-serif; text-align: center; background: #fafafa; }
+    .dish-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
+    .dish-card { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; }
+    model-viewer { height: 300px; width: 100%; background-color: #eee; border-radius: 8px; }
+    button { margin-top: 10px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
 </head>
 <body>
 
-  <h1>Choose a Dish to View on Your table</h1>
+  <h1>Choose a Dish to View on Your Table</h1>
 
   <div class="dish-container">
     <div class="dish-card">
-      <h2>donut</h2>
-      <model-viewer src="assets/donet.glb"
-        ar
-        ar-modes="scene-viewer webxr quick-look"
-        camera-controls
-        alt="Dish 1 in AR"
-        ios-src="assets/donut.usdz"
-        shadow-intensity="1"
-        auto-rotate
-        style="height: 300px; width: 100%;">
+      <h2>Donut</h2>
+      <model-viewer id="donutModel" src="donut.glb"
+        ar ar-modes="scene-viewer webxr quick-look"
+        camera-controls shadow-intensity="1" auto-rotate>
       </model-viewer>
-      <button onclick="document.querySelector('#dish1').activateAR()">View in AR</button>
+      <button onclick="document.querySelector('#donutModel').activateAR()">View in AR</button>
     </div>
 
     <div class="dish-card">
-      <h2>lamp</h2>
-      <model-viewer id="lamp" src="assets/lamp.glb"
-        ar
-        ar-modes="scene-viewer webxr quick-look"
-        camera-controls
-        alt="Dish 2 in AR"
-        ios-src="assets/lamp.usdz"
-        shadow-intensity="1"
-        auto-rotate
-        style="height: 300px; width: 100%;">
+      <h2>Lamp</h2>
+      <model-viewer id="lampModel" src="lamp.glb"
+        ar ar-modes="scene-viewer webxr quick-look"
+        camera-controls shadow-intensity="1" auto-rotate>
       </model-viewer>
-      <button onclick="document.querySelector('#lamp').activateAR()">View in AR</button>
+      <button onclick="document.querySelector('#lampModel').activateAR()">View in AR</button>
     </div>
   </div>
 
