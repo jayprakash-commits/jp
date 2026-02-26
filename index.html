@@ -1,54 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Donut AR</title>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
-    
-    <style>
-        body { margin: 0; padding: 0; background-color: #f0f0f0; font-family: sans-serif; }
-        /* Poori screen par model dikhane ke liye */
-        model-viewer {
-            width: 100vw;
-            height: 100vh;
-            background-color: #ffffff;
-        }
-        /* AR Button ki styling */
-        #ar-button {
-            background-color: #007bff;
-            border-radius: 8px;
-            border: none;
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 15px 25px;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            cursor: pointer;
-        }
-    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .instructions {
+      padding: 20px;
+      font-size: 18px;
+      font-weight: 700;
+      border-bottom: 2px solid black;
+    }
+  </style>
 </head>
+
 <body>
 
-    <model-viewer 
-        src="donut.glb" 
-        ar 
-        ar-modes="webxr scene-viewer quick-look" 
-        camera-controls 
-        poster="poster.webp" 
-        shadow-intensity="1" 
-        auto-rotate 
-        environment-image="neutral"
-        exposure="1">
-        
-        <button slot="ar-button" id="ar-button">
-            VIRTUAL DONUT DEKHO (AR)
-        </button>
+  <div class="instructions">
+    Drag with two fingers to rotate •  Pinch to zoom in zoom out •  Tap icon below to "View in your space"
+  </div>
 
-    </model-viewer>
+  <model-viewer
+    src="donut.glb"
+    ar
+    ar-modes="scene-viewer webxr quick-look"
+    ar-placement="floor"
+    camera-controls
+    shadow-intensity="1"
+    exposure="1"
+    scale="0.4 0.4 0.4"
+    min-camera-orbit="auto auto auto"
+    max-camera-orbit="auto auto auto"
+    style="width:100%; height:80vh;">
+  </model-viewer>
 
 </body>
+
 </html>
