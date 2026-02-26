@@ -3,28 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Dish in AR</title>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <title>JP AR Menu</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    
     <style>
-        body { margin: 0; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background: #eee; }
-        .dish-card { background: white; margin: 20px; padding: 15px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 90%; max-width: 400px; }
-        model-viewer { width: 100%; height: 300px; background-color: #fafafa; --poster-color: transparent; }
-        button { width: 100%; padding: 12px; background: #28a745; color: white; border: none; border-radius: 8px; font-weight: bold; margin-top: 10px; cursor: pointer; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f8f9fa; display: flex; flex-direction: column; align-items: center; }
+        h1 { color: #333; margin-bottom: 30px; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 1200px; }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 15px; display: flex; flex-direction: column; align-items: center; }
+        .card h3 { margin: 10px 0; color: #444; text-transform: capitalize; }
+        
+        /* Model Display settings */
+        model-viewer {
+            width: 100%;
+            height: 250px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            --poster-color: transparent;
+        }
+
+        /* AR Button style */
+        .ar-button {
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            cursor: pointer;
+            width: 80%;
+            transition: 0.3s;
+        }
+        .ar-button:active { transform: scale(0.95); }
     </style>
 </head>
 <body>
 
-    <h1>Choose a Dish</h1>
+    <h1>Dish Menu (AR View)</h1>
 
-    <div class="dish-card">
-        <h2>Donut</h2>
-        <model-viewer id="donut" src="donut.glb"
-            ar ar-modes="webxr scene-viewer quick-look"
-            camera-controls shadow-intensity="1" auto-rotate>
-            <button slot="ar-button" style="background: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                👋 View in AR
-            </button>
-        </model-viewer>
+    <div class="menu-grid">
+        <div class="card">
+            <h3>Dish 1: Donut</h3>
+            <model-viewer id="m1" src="donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" auto-rotate></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m1').activateAR()">VIEW IN YOUR ROOM</button>
+        </div>
+
+        <div class="card">
+            <h3>Dish 2: Donut</h3>
+            <model-viewer id="m2" src="donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" auto-rotate></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m2').activateAR()">VIEW IN YOUR ROOM</button>
+        </div>
+
+        <div class="card">
+            <h3>Dish 3: Donut</h3>
+            <model-viewer id="m3" src="donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" auto-rotate></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m3').activateAR()">VIEW IN YOUR ROOM</button>
+        </div>
+
+        <div class="card">
+            <h3>Dish 4: Donut</h3>
+            <model-viewer id="m4" src="donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" auto-rotate></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m4').activateAR()">VIEW IN YOUR ROOM</button>
+        </div>
+
+        <div class="card">
+            <h3>Dish 5: Donut</h3>
+            <model-viewer id="m5" src="donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" auto-rotate></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m5').activateAR()">VIEW IN YOUR ROOM</button>
+        </div>
+
+        <div class="card">
+            <h3>Dish 6: Donut</h3>
+            <model-viewer id="m6" src="donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" auto-rotate></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m6').activateAR()">VIEW IN YOUR ROOM</button>
+        </div>
+
+        <div class="card">
+            <h3>Dish 7: Donut</h3>
+            <model-viewer id="m7" src="donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" auto-rotate></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m7').activateAR()">VIEW IN YOUR ROOM</button>
+        </div>
     </div>
 
 </body>
