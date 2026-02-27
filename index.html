@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP AR Donut Menu</title>
-    
+    <title>JP AR Menu - 7 Items</title>
+
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    
+
     <style>
-        body { margin: 0; background: #ffffff; text-align: center; font-family: Arial, sans-serif; padding-bottom: 50px; }
-        .instructions { padding: 20px; font-size: 16px; font-weight: 700; border-bottom: 2px solid black; margin-bottom: 20px; background: #fff; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 10px; }
-        .card { background: white; border-radius: 12px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        body { margin: 0; background: #ffffff; text-align: center; font-family: Arial, sans-serif; }
+        .instructions { padding: 15px; font-size: 14px; font-weight: 700; border-bottom: 2px solid black; background: #fff; position: sticky; top: 0; z-index: 10; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .card { background: white; border-radius: 15px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid #eee; }
+        h2 { font-size: 18px; color: #333; margin-bottom: 10px; }
         
-        /* Model Viewer Settings from your working code */
-        model-viewer { 
-            width: 100%; 
-            height: 300px; 
-            background-color: #fafafa; 
+        /* Model Viewer Settings - Exactly like your working one */
+        model-viewer {
+            width: 100%;
+            height: 300px;
+            background-color: #ffffff;
         }
 
-        .ar-button { 
-            background-color: #000; 
-            color: white; 
-            border: none; 
-            padding: 12px; 
-            width: 100%; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            margin-top: 10px; 
-            cursor: pointer; 
+        .ar-button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+            cursor: pointer;
             text-transform: uppercase;
         }
     </style>
@@ -37,57 +38,50 @@
 <body>
 
     <div class="instructions">
-        Drag with two fingers to rotate • Pinch to zoom • Tap "VIEW IN AR" to see in your space
+        Drag to rotate • Pinch to zoom • Tap "View in AR" below
     </div>
 
     <div class="grid">
         <div class="card">
-            <h3>Donut 1</h3>
-            <model-viewer id="d1" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1">
-            </model-viewer>
-            <button class="ar-button" onclick="document.querySelector('#d1').activateAR()">View in AR</button>
+            <h2>Donut 1</h2>
+            <model-viewer id="m1" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1"></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m1').activateAR()">View in AR</button>
         </div>
 
         <div class="card">
-            <h3>Donut 2</h3>
-            <model-viewer id="d2" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1">
-            </model-viewer>
-            <button class="ar-button" onclick="document.querySelector('#d2').activateAR()">View in AR</button>
+            <h2>Donut 2</h2>
+            <model-viewer id="m2" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1"></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m2').activateAR()">View in AR</button>
         </div>
 
         <div class="card">
-            <h3>Donut 3</h3>
-            <model-viewer id="d3" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1">
-            </model-viewer>
-            <button class="ar-button" onclick="document.querySelector('#d3').activateAR()">View in AR</button>
+            <h2>Donut 3</h2>
+            <model-viewer id="m3" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1"></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m3').activateAR()">View in AR</button>
         </div>
 
         <div class="card">
-            <h3>Donut 4</h3>
-            <model-viewer id="d4" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1">
-            </model-viewer>
-            <button class="ar-button" onclick="document.querySelector('#d4').activateAR()">View in AR</button>
+            <h2>Donut 4</h2>
+            <model-viewer id="m4" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1"></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m4').activateAR()">View in AR</button>
         </div>
 
         <div class="card">
-            <h3>Donut 5</h3>
-            <model-viewer id="d5" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1">
-            </model-viewer>
-            <button class="ar-button" onclick="document.querySelector('#d5').activateAR()">View in AR</button>
+            <h2>Donut 5</h2>
+            <model-viewer id="m5" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1"></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m5').activateAR()">View in AR</button>
         </div>
 
         <div class="card">
-            <h3>Donut 6</h3>
-            <model-viewer id="d6" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1">
-            </model-viewer>
-            <button class="ar-button" onclick="document.querySelector('#d6').activateAR()">View in AR</button>
+            <h2>Donut 6</h2>
+            <model-viewer id="m6" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1"></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m6').activateAR()">View in AR</button>
         </div>
 
         <div class="card">
-            <h3>Donut 7</h3>
-            <model-viewer id="d7" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1">
-            </model-viewer>
-            <button class="ar-button" onclick="document.querySelector('#d7').activateAR()">View in AR</button>
+            <h2>Donut 7</h2>
+            <model-viewer id="m7" src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" scale="1 1 1"></model-viewer>
+            <button class="ar-button" onclick="document.querySelector('#m7').activateAR()">View in AR</button>
         </div>
     </div>
 
