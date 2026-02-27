@@ -1,103 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP AR Donut Menu - Full Path</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
 
-    <style>
-        body { margin: 0; background: #ffffff; text-align: center; font-family: 'Arial', sans-serif; }
-        .instructions { padding: 20px; font-size: 18px; font-weight: 700; border-bottom: 2px solid black; background: #fff; position: sticky; top: 0; z-index: 100; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; max-width: 1400px; margin: 0 auto; }
-        .card { border: 2px solid #eeeeee; border-radius: 20px; padding: 15px; background: #ffffff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        h3 { margin-bottom: 15px; color: #333; font-size: 18px; text-transform: uppercase; }
-        
-        /* Model Viewer Dimensions */
-        model-viewer {
-            width: 100%;
-            height: 350px;
-            background-color: #fcfcfc;
-            border-radius: 15px;
-        }
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
 
-        /* AR Button Style */
-        .ar-btn {
-            background-color: #000000;
-            color: #ffffff;
-            border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 12px;
-            font-weight: bold;
-            margin-top: 15px;
-            cursor: pointer;
-            letter-spacing: 1px;
-        }
-    </style>
+    .instructions {
+      padding: 20px;
+      font-size: 18px;
+      font-weight: 700;
+      border-bottom: 2px solid black;
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="instructions">
-        ROTATE WITH FINGER • PINCH TO ZOOM • TAP BUTTON FOR AR
-    </div>
+  <div class="instructions">
+    Drag with two fingers to rotate •  Pinch to zoom in zoom out •  Tap icon below to "View in your space"
+  </div>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Donut Selection 1</h3>
-            <model-viewer 
-                id="d1" 
-                src="https://jayprakash-commits.github.io/jp/donut.glb" 
-                ar 
-                ar-modes="webxr scene-viewer quick-look" 
-                ar-placement="floor" 
-                camera-controls 
-                shadow-intensity="1" 
-                exposure="1" 
-                scale="0.4 0.4 0.4"
-                loading="eager">
-            </model-viewer>
-            <button class="ar-btn" onclick="document.querySelector('#d1').activateAR()">VIEW IN YOUR SPACE</button>
-        </div>
-
-        <div class="card">
-            <h3>Donut Selection 2</h3>
-            <model-viewer id="d2" src="https://jayprakash-commits.github.io/jp/donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls scale="0.4 0.4 0.4"></model-viewer>
-            <button class="ar-btn" onclick="document.querySelector('#d2').activateAR()">VIEW IN YOUR SPACE</button>
-        </div>
-
-        <div class="card">
-            <h3>Donut Selection 3</h3>
-            <model-viewer id="d3" src="https://jayprakash-commits.github.io/jp/donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls scale="0.4 0.4 0.4"></model-viewer>
-            <button class="ar-btn" onclick="document.querySelector('#d3').activateAR()">VIEW IN YOUR SPACE</button>
-        </div>
-
-        <div class="card">
-            <h3>Donut Selection 4</h3>
-            <model-viewer id="d4" src="https://jayprakash-commits.github.io/jp/donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls scale="0.4 0.4 0.4"></model-viewer>
-            <button class="ar-btn" onclick="document.querySelector('#d4').activateAR()">VIEW IN YOUR SPACE</button>
-        </div>
-
-        <div class="card">
-            <h3>Donut Selection 5</h3>
-            <model-viewer id="d5" src="https://jayprakash-commits.github.io/jp/donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls scale="0.4 0.4 0.4"></model-viewer>
-            <button class="ar-btn" onclick="document.querySelector('#d5').activateAR()">VIEW IN YOUR SPACE</button>
-        </div>
-
-        <div class="card">
-            <h3>Donut Selection 6</h3>
-            <model-viewer id="d6" src="https://jayprakash-commits.github.io/jp/donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls scale="0.4 0.4 0.4"></model-viewer>
-            <button class="ar-btn" onclick="document.querySelector('#d6').activateAR()">VIEW IN YOUR SPACE</button>
-        </div>
-
-        <div class="card">
-            <h3>Donut Selection 7</h3>
-            <model-viewer id="d7" src="https://jayprakash-commits.github.io/jp/donut.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls scale="0.4 0.4 0.4"></model-viewer>
-            <button class="ar-btn" onclick="document.querySelector('#d7').activateAR()">VIEW IN YOUR SPACE</button>
-        </div>
-    </div>
+  <model-viewer
+    src="donut.glb"
+    ar
+    ar-modes="scene-viewer webxr quick-look"
+    ar-placement="floor"
+    camera-controls
+    shadow-intensity="1"
+    exposure="1"
+    scale="0.4 0.4 0.4"
+    min-camera-orbit="auto auto auto"
+    max-camera-orbit="auto auto auto"
+    style="width:100%; height:80vh;">
+  </model-viewer>
 
 </body>
+
 </html>
