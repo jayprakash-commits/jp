@@ -1,44 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP AR Menu</title>
+    <title>AR Menu JP</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-        body { margin: 0; background: #ffffff; text-align: center; font-family: Arial, sans-serif; }
-        .instructions { padding: 20px; font-size: 16px; font-weight: 700; border-bottom: 2px solid black; background: white; position: sticky; top: 0; z-index: 100; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
-        .card { border: 1px solid #ddd; border-radius: 15px; padding: 15px; background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        model-viewer { width: 100%; height: 350px; background-color: #fafafa; }
-        .ar-btn { background: #000; color: #fff; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; margin-top: 10px; cursor: pointer; }
+        body { margin: 0; font-family: sans-serif; text-align: center; background: #fff; }
+        .instructions { padding: 15px; border-bottom: 2px solid #000; font-weight: bold; }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        .card { border: 1px solid #ddd; border-radius: 12px; padding: 10px; margin: 10px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        model-viewer { width: 100%; height: 300px; background-color: #f9f9f9; }
+        button { background: #000; color: #fff; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; }
     </style>
 </head>
 <body>
 
-    <div class="instructions">
-        Drag to rotate • Pinch to zoom • Tap "VIEW IN SPACE"
-    </div>
+    <div class="instructions">Drag to rotate • Pinch to zoom • Tap "VIEW IN AR"</div>
 
     <div class="grid">
         <div class="card">
-            <h3>Dish 1</h3>
-            <model-viewer src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" style="width:100%; height:300px;"></model-viewer>
-            <button class="ar-btn" onclick="this.previousElementSibling.activateAR()">VIEW IN SPACE</button>
+            <h3>Donut 1</h3>
+            <model-viewer src="./donut.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls shadow-intensity="1" exposure="1" loading="eager">
+                <div slot="poster" style="display:flex; align-items:center; justify-content:center; height:100%;">Loading Donut...</div>
+            </model-viewer>
+            <button onclick="this.previousElementSibling.activateAR()">VIEW IN AR</button>
         </div>
 
-        <div class="card">
-            <h3>Dish 2</h3>
-            <model-viewer src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" ar-placement="floor" camera-controls shadow-intensity="1" exposure="1" style="width:100%; height:300px;"></model-viewer>
-            <button class="ar-btn" onclick="this.previousElementSibling.activateAR()">VIEW IN SPACE</button>
         </div>
-
-        <div class="card"><h3>Dish 3</h3><model-viewer src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls style="width:100%; height:300px;"></model-viewer><button class="ar-btn" onclick="this.previousElementSibling.activateAR()">VIEW IN SPACE</button></div>
-        <div class="card"><h3>Dish 4</h3><model-viewer src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls style="width:100%; height:300px;"></model-viewer><button class="ar-btn" onclick="this.previousElementSibling.activateAR()">VIEW IN SPACE</button></div>
-        <div class="card"><h3>Dish 5</h3><model-viewer src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls style="width:100%; height:300px;"></model-viewer><button class="ar-btn" onclick="this.previousElementSibling.activateAR()">VIEW IN SPACE</button></div>
-        <div class="card"><h3>Dish 6</h3><model-viewer src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls style="width:100%; height:300px;"></model-viewer><button class="ar-btn" onclick="this.previousElementSibling.activateAR()">VIEW IN SPACE</button></div>
-        <div class="card"><h3>Dish 7</h3><model-viewer src="donut.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls style="width:100%; height:300px;"></model-viewer><button class="ar-btn" onclick="this.previousElementSibling.activateAR()">VIEW IN SPACE</button></div>
-    </div>
 
 </body>
 </html>
